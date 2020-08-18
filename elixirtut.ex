@@ -24,6 +24,7 @@ defmodule M do
 			one_to_10 = 1..10
     end
 
+
     def strings do
     	my_str = "Mi string"
 			IO.puts("Length: #{String.length(my_str)}")
