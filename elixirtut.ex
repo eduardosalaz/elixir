@@ -103,8 +103,30 @@ defmodule M do
 			IO.puts("Ternario: #{if edad > 18, do: "Puedes votar", else: "No puedes votar"}")
   end
 
-  def estructuras do
+	def estructuras do
+		#listas:
+		my_list = [1,2,3, "foo"] #son linked lists, si la imprimimos imprimira sus caracteres en ascii
+		IO.puts("Mi lista: #{my_list}")
+		#puedes concatenar o eliminar usando ++/--
+		IO.puts("Mi lista más grande #{my_list ++ [4,5,6]}") #es importante recordar que todas las variables son inmutables
+		#al concatenar o restar elementos estas creando una lista nueva, la original no cambia
+		lista_variada = [42, "bar", true] #almacena distintos tipos de datos
+		#al ser una lista maneja cabeza y cola
+		IO.puts("Esta es la cabeza: #{hd(lista_variada)}")
+		IO.puts("Esta es la cola: #{tl(lista_variada)}")
+		#esto es un charlist
+		charlist = [104,101,108,108,111] #si imprimimos la lista imprimira hello
+		IO.puts("Charlist: #{charlist}")
+		IO.puts("Sucesión completa: #{[0] ++ my_list}")
 
+
+		#tuples:
+		my_tuple = {1, :atomo, "baz", false}
+		#acceder a los elementos por index
+		IO.puts("Primer elemento de mi tuple: #{elem(my_tuple, 0)}")
+		IO.puts("Tamaño del tuple: #{tuple_size(my_tuple)}")
+		#agregar elementos a un index en especifico, creando un nuevo tuple
+		tuple_nuevo = put_elem(my_tuple, 3, "qux")
 	end
 
 end
